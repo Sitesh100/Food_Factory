@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
+import { resList } from './Data';
 
 const Header = () => {
     return (
@@ -19,12 +19,13 @@ const Header = () => {
 }
 
 const ResCard = (props) => {
+    const {resData} = props
     return(
         <div className='res-card'> 
-        <img src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.cubesnjuliennes.com%2Fwp-content%2Fuploads%2F2020%2F06%2FBest-Instant-Pot-Butter-Chicken-Recipe.jpg&f=1&nofb=1&ipt=b784f03e821104d8b41030842ca527c6d7b22bd84d7f60c23db4f9ca0ebbd0c9&ipo=images' alt='food pic'/>
-            <h3>{props.resName}</h3>
-            <h4>{props.Food}</h4>
-            <h4>4.5</h4>
+        <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+resData.info.cloudinaryImageId} alt='food pic'/>
+            <h3>{resData.info.name}</h3>
+            <h4>{resData.info.cuisines.join(", ")}</h4>
+            <h4>{resData.info.avgRating}</h4>
             <h4>40min</h4>
         </div>
     )
@@ -38,18 +39,27 @@ const Body = () => {
                 search
             </div>
             <div className='res-contaner'>
-                <ResCard resName="Apka Dhaba" Food="Butter chicken" />
-                <ResCard resName="Mera Dhaba" Food="Tanduri chicken" />
-                <ResCard resName="Tumhara Dhaba" Food="Matter Panner" />
-                <ResCard resName="Sbka Dhaba" Food="Saahi Panner" />
-                <ResCard resName="Pakoda Dhaba" Food="Pakoda" />
-                <ResCard resName="Alok Dhaba" Food="Chicken Tikka Masala" />
+                <ResCard resData = {resList[0]} />
+                <ResCard resData = {resList[1]} />
+                <ResCard resData = {resList[2]} />
+                <ResCard resData = {resList[3]} />
+                <ResCard resData = {resList[4]} />
+                <ResCard resData = {resList[5]} />
+                <ResCard resData = {resList[6]} />
+                <ResCard resData = {resList[7]} />
+                <ResCard resData = {resList[8]} />
+                <ResCard resData = {resList[9]} />
+                <ResCard resData = {resList[10]} />
+                <ResCard resData = {resList[11]} />
                 
             </div>
         </div>
     )
    
 }
+
+
+
 const AppLayout = () => {
     return (
         <div className='App-Layout'>
