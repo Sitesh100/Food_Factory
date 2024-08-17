@@ -78,3 +78,9 @@
     flex-wrap: wrap;
     gap: 50px;
 }
+.filter-btn{
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 0px 10px;
+}
